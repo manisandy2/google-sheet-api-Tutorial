@@ -73,3 +73,11 @@ print(result)
 
 # if __name__ == '__main__':
 #     main()
+
+data = [["01-01-2021",3000],["05-05-2023",7000],["08-08-2021",5000]]
+
+request = service.spreadsheets().values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID, 
+                                                 range="Sheet2!b2", 
+                                                 valueInputOption="USER_ENTERED", 
+                                                 body={"values":data})
+response = request.execute()
